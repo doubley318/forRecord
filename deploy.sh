@@ -5,7 +5,7 @@ APP_NAME="${APP_NAME:-forRecord}"
 REPO_URL="${REPO_URL:-https://github.com/doubley318/forRecord.git}"
 DEPLOY_DIR="${DEPLOY_DIR:-/var/www/${APP_NAME}}"
 NGINX_CONF="${NGINX_CONF:-/etc/nginx/sites-available/${APP_NAME}}"
-DOMAIN="${DOMAIN:-_}"
+DOMAIN="${1:-${DOMAIN:-_}}"
 
 if [[ "${EUID}" -ne 0 ]]; then
   echo "请使用 root 运行：sudo bash deploy.sh"
@@ -51,4 +51,5 @@ systemctl enable nginx
 systemctl reload nginx
 
 echo "部署完成：${DEPLOY_DIR}"
-echo "如果你有域名，请用 DOMAIN=你的域名 sudo -E bash deploy.sh 执行。"
+echo "当前绑定域名：${DOMAIN}"
+echo "如果你有域名，请用 sudo bash deploy.sh 你的域名 执行。"

@@ -42,7 +42,13 @@ sudo bash deploy.sh
 如果已经绑定域名：
 
 ```bash
-DOMAIN=你的域名 sudo -E bash deploy.sh
+sudo bash deploy.sh 你的域名
+```
+
+例如：
+
+```bash
+sudo bash deploy.sh www.zxlmoney.online
 ```
 
 脚本会安装 `git` 和 `nginx`，把项目部署到 `/var/www/forRecord`，并生成 Nginx 配置。
