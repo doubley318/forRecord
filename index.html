@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网页版计算器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="calculator" aria-label="网页版计算器">
+        <div class="display" aria-live="polite">
+          <div class="expression" id="expression">0</div>
+          <div class="result" id="result">0</div>
+        </div>
+
+        <div class="keys" aria-label="计算器按键">
+          <button class="key utility" type="button" data-action="clear">AC</button>
+          <button class="key utility" type="button" data-action="delete">⌫</button>
+          <button class="key utility" type="button" data-value="%">%</button>
+          <button class="key operator" type="button" data-value="/">÷</button>
+
+          <button class="key" type="button" data-value="7">7</button>
+          <button class="key" type="button" data-value="8">8</button>
+          <button class="key" type="button" data-value="9">9</button>
+          <button class="key operator" type="button" data-value="*">×</button>
+
+          <button class="key" type="button" data-value="4">4</button>
+          <button class="key" type="button" data-value="5">5</button>
+          <button class="key" type="button" data-value="6">6</button>
+          <button class="key operator" type="button" data-value="-">−</button>
+
+          <button class="key" type="button" data-value="1">1</button>
+          <button class="key" type="button" data-value="2">2</button>
+          <button class="key" type="button" data-value="3">3</button>
+          <button class="key operator" type="button" data-value="+">+</button>
+
+          <button class="key zero" type="button" data-value="0">0</button>
+          <button class="key" type="button" data-value=".">.</button>
+          <button class="key equals" type="button" data-action="equals">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
