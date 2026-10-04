@@ -52,3 +52,14 @@ sudo bash deploy.sh www.zxlmoney.online
 ```
 
 脚本会安装 `git` 和 `nginx`，把项目部署到 `/var/www/forRecord`，并生成 Nginx 配置。
+
+当域名已存在 Let’s Encrypt 证书时，脚本会自动启用 HTTPS，并保留
+`/moneybook/api/v1/` 到 `http://127.0.0.1:2523` 的反向代理。因此网页部署不会
+影响同域名下的小程序后端接口。证书尚未申请时，脚本只配置 HTTP；申请证书后再次
+执行同一部署命令即可启用 HTTPS。
+
+默认后端地址为 `http://127.0.0.1:2523`；如服务监听地址不同，可以在执行时覆盖：
+
+```bash
+sudo BACKEND_UPSTREAM=http://127.0.0.1:2523 bash deploy.sh www.zxlmoney.online
+```
